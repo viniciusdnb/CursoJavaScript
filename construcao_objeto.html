@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>construcao de objeto</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        function Person(first, last, age, eye){
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+            this.nationality = "English";
+            this.fullName = function(){
+                return this.firstName + " " + this.lastName;
+            }
+        }
+
+        //criando objeto
+        const myFather = new Person("john", "doe", 50, "blue");
+        const myMother = new Person("sally", "rally", 48, "green");
+        
+        //adicionando uma nova propriedade ao objeto
+        //adicionara a todos os objetos a propriedade
+        Person.prototype.car = "fiat";
+
+        //para adicionar uma propriedade para o unico objeto tem que chamalo nominalmente
+        myMother.car = "byd";
+
+        //adicionando um metodo ao objeto contrutor
+        Person.prototype.changeName = function(name){
+            this.lastName = name;
+        }
+
+        document.getElementById("demo").innerHTML = "my father is " + myFather.firstName + " and my mother is " + myMother.lastName + "<br>";
+        myMother.changeName("doe");
+        console.log(myMother.lastName);
+    </script>
+</body>
+</html>
