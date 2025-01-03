@@ -11,20 +11,16 @@ const car = {
             return;
         }
         console.log("car on!");
-        return;
-        
+        return;        
     },
     drive: function(direction){
         console.log( "drive " + direction);
         return;
-
     },
-
     brake: function(){
         console.log( "car braking!");
         return;
     }
-
 };
 
 const person = {
